@@ -52,17 +52,26 @@ public class PhoneBook {
         return this.phoneBookMap.get(name);
     }
 
-    public String reverseLookup(String phoneNumber)  {
+    public String reverseLookup(String phoneNumber) {
+        for (Map.Entry<String, List<String>> entry : this.phoneBookMap.entrySet()) {
+            if (entry.getValue().contains(phoneNumber)) {
+                return entry.getKey();
+            }
+        }
         return null;
     }
 
     public List<String> getAllContactNames() {
-        return null;
+        List<String> toAdd = new ArrayList<>();
+        for (Map.Entry<String, List<String>> entry : this.phoneBookMap.entrySet()) {
+            toAdd.add(entry.getKey());
+        }
+        return toAdd;
     }
+
 
     public Map<String, List<String>> getMap() {
         return this.phoneBookMap;
     }
-
 
 }
