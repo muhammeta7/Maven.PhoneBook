@@ -35,17 +35,8 @@ public class PhoneBook {
         this.phoneBookMap.remove(name);
     }
 
-    public Boolean hasEntry(String name) {
-        if(this.phoneBookMap.containsKey(name)){
-            return true;
-        }
-        if(this.phoneBookMap.values().contains(name)){
-            return true;
-        }
-        if(this.phoneNumbers.contains(name)){
-            return true;
-        }
-        return false;
+    public Boolean hasEntry(String phoneNumber) {
+        return this.phoneNumbers.contains(phoneNumber);
     }
 
     public List<String> lookup(String name) {
@@ -68,7 +59,6 @@ public class PhoneBook {
         }
         return toAdd;
     }
-
 
     public Map<String, List<String>> getMap() {
         return this.phoneBookMap;
