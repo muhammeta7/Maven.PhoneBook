@@ -16,8 +16,7 @@ public class PhoneBook {
     }
 
     public PhoneBook(Map<String, List<String>> map) {
-        this.phoneBookMap = new LinkedHashMap<>();
-        this.phoneBookMap.putAll(map);
+        this.phoneBookMap = map;
     }
 
     public void add(String name, String phoneNumber) {
